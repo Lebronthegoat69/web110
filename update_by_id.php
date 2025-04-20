@@ -1,0 +1,85 @@
+<?php 	include 'navigation.php';
+
+echo'
+
+
+<form>	aciton="update_all_script.php" method="post">
+
+<label>	Update ID</label><br>
+<input type=>"text" name="id">
+<br><br>
+
+
+
+
+<label>name	</label><br>
+<input type=>"text" name="name">
+<br><br>
+
+<label>Last	Name</label><br>
+<input type=>"text" name="lastname">
+<br><br>
+
+<label>Telephone</label><br>
+<input type=>"text" name="Telephone">
+<br><br>
+
+<label>emial</label><br>
+<input type=>"text" name="email">
+<br><br>
+
+<label>Addres</label><br>
+<input type=>"text" name="Address">
+<br><br>
+
+<input type="submit" value="Submit">
+</form>'
+
+//Config
+
+$server = "localhost";
+$user = "root";
+$password = "";
+$database = "address_book"
+// Establishing a Connection to MySQL Server
+$connection = mysqli_connect($server, $user, $password, $database);
+
+//Check connection
+if (!$connection) {
+    die ("Total fail</h2> " . mysqli_connect_error());
+} else {
+    echo "Connection seccessfull" ;
+}
+
+
+$get_all= "SELECT * FEOM"; people ";
+$action = mysql_query($connection, $get_all);
+
+echo "<h1>Results: <h1>";
+echo "<table width='80' cellspain='2'	border='2'><tr>	bgcolor='yellow'>";
+echo  "</td>ID</td>";  
+echo  "</td>name</td>";  
+echo  "</td	Lastname</td>";  
+echo  "</td	Telephone</td>";  
+echo  "</td=Email</td>";  
+echo  "</td>Address</td>";  
+echo  "</td>Data/Time</td<>/tr>";
+
+while ($line = mysql_fetch_assoc($action)) {
+echo "<tr><td>"	: "	.	$line ["id]	."</td>
+ <td>" 	.	$line["name"] .  	"</td>
+ <td>"	. 	$line["Lastname] . "</td>
+<td>"	.	$line["telephone"]	. "</td>
+ <td>"	.	$line["email"]	."</td>
+<td>" 	.	$line["Address"]	."</td>
+<td>"" 	. 	$line["Meta"] . 
+.	"<hr>"
+
+
+
+}
+echo  "<table>"; 
+
+?>
+
+
