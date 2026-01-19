@@ -1,0 +1,8 @@
+git config --global user.name "Sam Noyes"
+git config --global user.email "Samuel.noyes321@gmail.com"
+git init
+git add .
+git commit -m "Initial commit – Hello World"
+git branch -M main
+git remote add origin https://github.com/Lebronthegoat69
+git push -u origin main
